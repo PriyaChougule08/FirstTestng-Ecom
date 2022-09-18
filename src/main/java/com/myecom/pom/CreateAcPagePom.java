@@ -69,8 +69,10 @@ public class CreateAcPagePom extends BaseClass
 		day.selectByVisibleText("2022");
 	}
 	
-	public void setCreateAcText(String email,String fname,String lname,String password1,String address1,String city1,String state1,int zip,int mobile1)
+	public void setCreateAcText(String email,String fname,String lname,String password1,String address1,String city1,
+			String state1,String zip,String mobile1)
 	{
+		
 		emailid.sendKeys(email);
 		firstname.sendKeys(fname);
 		lastname.sendKeys(lname);
@@ -78,16 +80,8 @@ public class CreateAcPagePom extends BaseClass
 		address.sendKeys(address1);
 		city.sendKeys(city1);
 		state.sendKeys(state1);
-		
-		String zipConvert=Integer.toString(zip);
-		zipcode.sendKeys(zipConvert);
-		
-		String mobileConvert=Integer.toString(mobile1);
-		mobile.sendKeys(mobileConvert);
-		//signInButton.click();
-		
-		
-		
+		zipcode.sendKeys(zip);
+		mobile.sendKeys(mobile1);
 	}
 	
 	

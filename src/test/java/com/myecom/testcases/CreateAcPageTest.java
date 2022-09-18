@@ -1,6 +1,7 @@
 package com.myecom.testcases;
 
 import java.io.FileNotFoundException;
+import java.time.Duration;
 import java.util.Map;
 
 import org.apache.poi.ss.usermodel.Sheet;
@@ -38,11 +39,15 @@ public class CreateAcPageTest extends BaseClass
 		 signinpagepom1.ValidatecreateAcBtn();
 		
 		 Sheet sh=data.getSheet(data.getExcelFile(),"signup");
-			Map<String,Object>loginData=data.getExcelSheetData(sh);
-		createAcPagePom.setCreateAcText((String)loginData.get("email"), (String)loginData.get("fname"),(String)loginData.get("lname"),(String)loginData.get("password"),(String)loginData.get("address"),(String)loginData.get("city"),(String)loginData.get("state"),(String)loginData.get("zip"),(String)loginData.get("mobile"));
+		Map<String,Object>loginData=data.getExcelSheetData(sh);
+		 
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		
+		createAcPagePom.setCreateAcText((String)loginData.get("email"),(String)loginData.get("fname"),(String)loginData.get("lname"),(String)loginData.get("password"),(String)loginData.get("address"),(String)loginData.get("city"),
+				(String)loginData.get("state"),(String)loginData.get("zip"),(String)loginData.get("mobile"));
+		//(String)loginData.get("zip"),(String)loginData.get("mobile")
 		//String name=(String)loginData.get("fname");
 		//String password=(String)loginData.get("password");
-		
 		
 	}
 }
