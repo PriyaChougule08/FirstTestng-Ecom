@@ -18,13 +18,15 @@ public static Properties prop;
 protected static String projectPath=System.getProperty("user.dir");
 
 public void loadAppliction()
+//public void loadAppliction(String browser)
 	{
 	String browser=(String) prop.get("browser");  // it gets value of key-- here key is browser
+	//String browser=(String) prop.get("browser"); //commentout for cross browser
 	if(browser.equalsIgnoreCase("chrome"))
 	{
 		System.setProperty("webdriver.chrome.driver",projectPath+"//drivers//chromedriver.exe");
 		driver=new ChromeDriver();
-		driver.manage().window().maximize();
+		//driver.manage().window().maximize();
 	}
 	else if(browser.equalsIgnoreCase("firefox"))
 	{
