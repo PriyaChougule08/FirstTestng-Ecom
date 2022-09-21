@@ -1,21 +1,26 @@
 package com.myecom.testcases;
 
+import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import com.beust.jcommander.Parameter;
+import com.listner.MyListner;
 import com.myecom.base.BaseClass;
 
+@Listeners(MyListner.class)   ///it takes MyListner class
 public class DemoTest extends BaseClass
-{	@Parameters("browser")
+{	//@Parameters("browser")
 	@BeforeMethod
-	public void setup(String browser)
+	public void setup()
+	//public void setup(String browser)
 	{
-	//loadAppliction(browser);
+	loadAppliction();
 	}
 	@AfterMethod
 	public void teardown()
@@ -33,6 +38,7 @@ public class DemoTest extends BaseClass
 	public void test2()  
 	{
 	System.out.println("In Test 2");
+	Assert.fail();
 	}
 	
 	@Test(priority = 1,groups = {"sanity"})

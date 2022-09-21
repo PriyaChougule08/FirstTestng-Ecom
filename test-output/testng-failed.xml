@@ -1,40 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite thread-count="3" parallel="classes" name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
-  <test thread-count="3" parallel="classes" name="Test(failed)">
-    <parameter name="browser" value="chrome"/>
+<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.myecom.testcases.SignInPageTest">
+      <class name="com.myecom.testcases.DemoTest">
         <methods>
-          <include name="tearDown"/>
-          <include name="setUp"/>
+          <include name="test2"/>
           <include name="readProp"/>
-          <include name="ValidatecreateAcBtn"/>
-          <include name="sendkeysToEmailBox"/>
+          <include name="teardown"/>
+          <include name="setup"/>
         </methods>
-      </class> <!-- com.myecom.testcases.SignInPageTest -->
-      <class name="com.myecom.testcases.IndexPageTest">
-        <methods>
-          <include name="serachBoxValidate"/>
-          <include name="tearDown"/>
-          <include name="validateLogo"/>
-          <include name="validateTitle"/>
-          <include name="flushReport"/>
-          <include name="generateExtentReport"/>
-          <include name="test"/>
-          <include name="readProp"/>
-          <include name="setUp"/>
-          <include name="sendkeys1"/>
-          <include name="signInClick"/>
-        </methods>
-      </class> <!-- com.myecom.testcases.IndexPageTest -->
-      <class name="com.myecom.testcases.CreateAcPageTest">
-        <methods>
-          <include name="createAc"/>
-          <include name="readProp"/>
-          <include name="setUp"/>
-        </methods>
-      </class> <!-- com.myecom.testcases.CreateAcPageTest -->
+      </class> <!-- com.myecom.testcases.DemoTest -->
     </classes>
-  </test> <!-- Test(failed) -->
-</suite> <!-- Failed suite [Suite] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->
